@@ -43,7 +43,7 @@ namespace 总包test
             if (textBox1.Text == "")
             {
                 
-                var result = from info in linq.总包test明细
+                var result = from info in linq.总包明细
                
                               select new
                              {
@@ -52,6 +52,9 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
+                                 调整金额=info.调整金额,
+                                 日期=info.日期
+
                              };
                 
               dataGridView1.DataSource = result;
@@ -59,7 +62,7 @@ namespace 总包test
             else
             {
                 
-                        var resultid = from info in linq.总包test明细
+                        var resultid = from info in linq.总包明细
                                        where info.项目 == textBox1.Text
                                        select new
                                        {
@@ -68,6 +71,8 @@ namespace 总包test
                                            收款金额 = info.收款金额,
                                            收票金额 = info.收票金额,
                                            付款金额 = info.付款金额,
+                                           调整金额 = info.调整金额,
+                                           日期 = info.日期
                                        };
                         dataGridView1.DataSource = resultid;
                         

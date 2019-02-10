@@ -1,22 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="总包test" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=MICROWIN10-2015;Initial Catalog=总包test;Integrated Security=True" SettingsObjectName="总包test.Properties.Settings" SettingsPropertyName="总包testConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.总包test" Member="总包test">
-    <Type Name="总包test">
-      <Column Name="项目" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="开票金额" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="收款金额" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="收票金额" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="付款金额" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.总包test明细" Member="总包test明细">
-    <Type Name="总包test明细">
+  <Table Name="dbo.总包明细" Member="总包明细">
+    <Type Name="总包明细">
       <Column Name="编号" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="项目" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="项目" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="开票金额" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="收款金额" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="收票金额" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="收款金额" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="付款金额" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="调整金额" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="日期" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>

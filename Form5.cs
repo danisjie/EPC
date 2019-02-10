@@ -35,7 +35,7 @@ namespace 总包test
             if (e.RowIndex > -1)
             {
                 id = Convert.ToString(dataGridView1[0, e.RowIndex].Value).Trim();
-                var result = from info in linq.总包test明细
+                var result = from info in linq.总包明细
                              where id == info.项目
                              select new
                              {
@@ -67,7 +67,7 @@ namespace 总包test
 
             {
 
-                var result = from info in linq.总包test明细
+                var result = from info in linq.总包明细
 
                              select new
                              {
@@ -122,13 +122,13 @@ namespace 总包test
             }
             linq = new DataClasses1DataContext(strCon);
 
-            var result = from info in linq.总包test明细
+            var result = from info in linq.总包明细
                          where m_selectedIndex == info.编号
                          select info;
 
             if (result.Count() == 1)
             {
-                foreach (总包test明细 item in result)
+                foreach (总包明细 item in result)
                 {
                     item.项目 = textBox1.Text;
                     item.开票金额 = double.Parse(textBox2.Text);
@@ -149,5 +149,10 @@ namespace 总包test
         }
 
         private int m_selectedIndex;
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

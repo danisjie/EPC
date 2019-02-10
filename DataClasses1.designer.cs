@@ -30,9 +30,9 @@ namespace 总包test
 		
     #region 可扩展性方法定义
     partial void OnCreated();
-    partial void Insert总包test明细(总包test明细 instance);
-    partial void Update总包test明细(总包test明细 instance);
-    partial void Delete总包test明细(总包test明细 instance);
+    partial void Insert总包明细(总包明细 instance);
+    partial void Update总包明细(总包明细 instance);
+    partial void Delete总包明细(总包明细 instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -65,124 +65,17 @@ namespace 总包test
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<总包test> 总包test
+		public System.Data.Linq.Table<总包明细> 总包明细
 		{
 			get
 			{
-				return this.GetTable<总包test>();
-			}
-		}
-		
-		public System.Data.Linq.Table<总包test明细> 总包test明细
-		{
-			get
-			{
-				return this.GetTable<总包test明细>();
+				return this.GetTable<总包明细>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.总包test")]
-	public partial class 总包test
-	{
-		
-		private string _项目;
-		
-		private System.Nullable<double> _开票金额;
-		
-		private System.Nullable<double> _收款金额;
-		
-		private System.Nullable<double> _收票金额;
-		
-		private System.Nullable<double> _付款金额;
-		
-		public 总包test()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_项目", DbType="VarChar(50)")]
-		public string 项目
-		{
-			get
-			{
-				return this._项目;
-			}
-			set
-			{
-				if ((this._项目 != value))
-				{
-					this._项目 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_开票金额", DbType="Float")]
-		public System.Nullable<double> 开票金额
-		{
-			get
-			{
-				return this._开票金额;
-			}
-			set
-			{
-				if ((this._开票金额 != value))
-				{
-					this._开票金额 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收款金额", DbType="Float")]
-		public System.Nullable<double> 收款金额
-		{
-			get
-			{
-				return this._收款金额;
-			}
-			set
-			{
-				if ((this._收款金额 != value))
-				{
-					this._收款金额 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收票金额", DbType="Float")]
-		public System.Nullable<double> 收票金额
-		{
-			get
-			{
-				return this._收票金额;
-			}
-			set
-			{
-				if ((this._收票金额 != value))
-				{
-					this._收票金额 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_付款金额", DbType="Float")]
-		public System.Nullable<double> 付款金额
-		{
-			get
-			{
-				return this._付款金额;
-			}
-			set
-			{
-				if ((this._付款金额 != value))
-				{
-					this._付款金额 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.总包test明细")]
-	public partial class 总包test明细 : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.总包明细")]
+	public partial class 总包明细 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -193,11 +86,13 @@ namespace 总包test
 		
 		private System.Nullable<double> _开票金额;
 		
-		private System.Nullable<double> _收款金额;
-		
 		private System.Nullable<double> _收票金额;
 		
+		private System.Nullable<double> _收款金额;
+		
 		private System.Nullable<double> _付款金额;
+		
+		private System.Nullable<double> _调整金额;
 		
 		private System.Nullable<System.DateTime> _日期;
 		
@@ -211,17 +106,19 @@ namespace 总包test
     partial void On项目Changed();
     partial void On开票金额Changing(System.Nullable<double> value);
     partial void On开票金额Changed();
-    partial void On收款金额Changing(System.Nullable<double> value);
-    partial void On收款金额Changed();
     partial void On收票金额Changing(System.Nullable<double> value);
     partial void On收票金额Changed();
+    partial void On收款金额Changing(System.Nullable<double> value);
+    partial void On收款金额Changed();
     partial void On付款金额Changing(System.Nullable<double> value);
     partial void On付款金额Changed();
+    partial void On调整金额Changing(System.Nullable<double> value);
+    partial void On调整金额Changed();
     partial void On日期Changing(System.Nullable<System.DateTime> value);
     partial void On日期Changed();
     #endregion
 		
-		public 总包test明细()
+		public 总包明细()
 		{
 			OnCreated();
 		}
@@ -246,7 +143,7 @@ namespace 总包test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_项目", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_项目", DbType="NVarChar(MAX)")]
 		public string 项目
 		{
 			get
@@ -286,26 +183,6 @@ namespace 总包test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收款金额", DbType="Float")]
-		public System.Nullable<double> 收款金额
-		{
-			get
-			{
-				return this._收款金额;
-			}
-			set
-			{
-				if ((this._收款金额 != value))
-				{
-					this.On收款金额Changing(value);
-					this.SendPropertyChanging();
-					this._收款金额 = value;
-					this.SendPropertyChanged("收款金额");
-					this.On收款金额Changed();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收票金额", DbType="Float")]
 		public System.Nullable<double> 收票金额
 		{
@@ -326,6 +203,26 @@ namespace 总包test
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收款金额", DbType="Float")]
+		public System.Nullable<double> 收款金额
+		{
+			get
+			{
+				return this._收款金额;
+			}
+			set
+			{
+				if ((this._收款金额 != value))
+				{
+					this.On收款金额Changing(value);
+					this.SendPropertyChanging();
+					this._收款金额 = value;
+					this.SendPropertyChanged("收款金额");
+					this.On收款金额Changed();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_付款金额", DbType="Float")]
 		public System.Nullable<double> 付款金额
 		{
@@ -342,6 +239,26 @@ namespace 总包test
 					this._付款金额 = value;
 					this.SendPropertyChanged("付款金额");
 					this.On付款金额Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_调整金额", DbType="Float")]
+		public System.Nullable<double> 调整金额
+		{
+			get
+			{
+				return this._调整金额;
+			}
+			set
+			{
+				if ((this._调整金额 != value))
+				{
+					this.On调整金额Changing(value);
+					this.SendPropertyChanging();
+					this._调整金额 = value;
+					this.SendPropertyChanged("调整金额");
+					this.On调整金额Changed();
 				}
 			}
 		}

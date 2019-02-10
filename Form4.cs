@@ -41,13 +41,13 @@ namespace 总包test
         {
             string c;
             if (textBox1.Text == "")
-                c = "Select 项目,SUM(开票金额) as 开票金额,sum(收款金额) as 收款金额 ,sum(收票金额) as 收票金额 ,sum(付款金额) as 付款金额 From 总包test明细 group by 项目";
+                c = "Select 项目,SUM(开票金额) as 开票金额,sum(收款金额) as 收款金额 ,sum(收票金额) as 收票金额 ,sum(付款金额) as 付款金额,sum(调整金额) as 调整金额 From 总包明细 group by 项目";
             else
-                c = "Select 项目,SUM(开票金额) as 开票金额,sum(收款金额) as 收款金额 ,sum(收票金额) as 收票金额 ,sum(付款金额) as 付款金额 From 总包test明细 WHERE 项目='" + textBox1.Text + "' group by 项目";
+                c = "Select 项目,SUM(开票金额) as 开票金额,sum(收款金额) as 收款金额 ,sum(收票金额) as 收票金额 ,sum(付款金额) as 付款金额 ,sum(调整金额) as 调整金额 From 总包明细 WHERE 项目='" + textBox1.Text + "' group by 项目";
 
-            SqlCommand cmd = new SqlCommand(c, conn);
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.SelectCommand = cmd;
+            SqlCommand cmd = new SqlCommand(StringConnection.Instance().ToString());
+            SqlDataAdapter sda = new SqlDataAdapter(c, conn);
+            
             DataSet ds = new DataSet();
             sda.Fill(ds, "cs");
             dataGridView1.DataSource = ds.Tables[0];

@@ -26,7 +26,7 @@ namespace 总包test
 
             var linq = new DataClasses1DataContext(s.ToString());
 
-            var result = from info in linq.总包test明细
+            var result = from info in linq.总包明细
                             select new
                             {
                                 项目 = info.项目

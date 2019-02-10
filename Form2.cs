@@ -51,14 +51,42 @@ namespace 总包test
         private void button1_Click(object sender, EventArgs e)
         {
             linq = new DataClasses1DataContext(strCon);
-            总包test明细 test = new 总包test明细();
+            总包明细 test = new 总包明细();
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("请输入项目名称");
+                return;
+            }
+            if (textBox4.Text == "")
+            {
+                MessageBox.Show("请输入日期");
+                return;
+
+            }
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "0";
+            }
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = "0";
+            }
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "0";
+            }
+            if (textBox6.Text == "")
+            {
+                textBox6.Text = "0";
+            }
             test.项目 = textBox1.Text;
             test.开票金额 = double.Parse(textBox2.Text);
             test.收款金额 = double.Parse(textBox3.Text);
             test.日期 = DateTime.Parse(textBox4.Text);
             test.收票金额 = double.Parse(textBox5.Text);
             test.付款金额 = double.Parse(textBox6.Text);
-            linq.总包test明细.InsertOnSubmit(test);
+            test.调整金额 = 0;
+            linq.总包明细.InsertOnSubmit(test);
             linq.SubmitChanges();
             MessageBox.Show("数据添加成功");
             BindInfo();
@@ -99,7 +127,7 @@ namespace 总包test
             
             {
 
-                var result = from info in linq.总包test明细
+                var result = from info in linq.总包明细
 
                              select new
                              {
@@ -108,6 +136,7 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
+                                 日期=info.日期
                              };
 
                 dataGridView1.DataSource = result;

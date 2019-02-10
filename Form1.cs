@@ -56,7 +56,8 @@ namespace 总包test
 
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            Form7 frm7 = new Form7();
+            frm7.Show();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
