@@ -45,5 +45,11 @@ namespace 总包test
                 MessageBox.Show(ex.Message);
             }
         }
+        
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

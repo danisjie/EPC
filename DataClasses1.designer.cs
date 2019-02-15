@@ -22,7 +22,7 @@ namespace 总包test
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="总包test")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="总包")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace 总包test
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::总包test.Properties.Settings.Default.总包testConnectionString, mappingSource)
+				base(global::总包test.Properties.Settings.Default.总包ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -92,7 +92,7 @@ namespace 总包test
 		
 		private System.Nullable<double> _付款金额;
 		
-		private System.Nullable<double> _调整金额;
+		private System.Nullable<double> _收款调整金额;
 		
 		private System.Nullable<System.DateTime> _日期;
 		
@@ -112,8 +112,8 @@ namespace 总包test
     partial void On收款金额Changed();
     partial void On付款金额Changing(System.Nullable<double> value);
     partial void On付款金额Changed();
-    partial void On调整金额Changing(System.Nullable<double> value);
-    partial void On调整金额Changed();
+    partial void On收款调整金额Changing(System.Nullable<double> value);
+    partial void On收款调整金额Changed();
     partial void On日期Changing(System.Nullable<System.DateTime> value);
     partial void On日期Changed();
     #endregion
@@ -243,22 +243,22 @@ namespace 总包test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_调整金额", DbType="Float")]
-		public System.Nullable<double> 调整金额
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_收款调整金额", DbType="Float")]
+		public System.Nullable<double> 收款调整金额
 		{
 			get
 			{
-				return this._调整金额;
+				return this._收款调整金额;
 			}
 			set
 			{
-				if ((this._调整金额 != value))
+				if ((this._收款调整金额 != value))
 				{
-					this.On调整金额Changing(value);
+					this.On收款调整金额Changing(value);
 					this.SendPropertyChanging();
-					this._调整金额 = value;
-					this.SendPropertyChanged("调整金额");
-					this.On调整金额Changed();
+					this._收款调整金额 = value;
+					this.SendPropertyChanged("收款调整金额");
+					this.On收款调整金额Changed();
 				}
 			}
 		}

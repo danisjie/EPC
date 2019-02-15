@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "总包test", "总包test.csproj", "{3DD74F26-502A-409C-B9BD-6206253C735E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "总包", "总包.csproj", "{3DD74F26-502A-409C-B9BD-6206253C735E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

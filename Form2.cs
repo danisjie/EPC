@@ -85,7 +85,7 @@ namespace 总包test
             test.日期 = DateTime.Parse(textBox4.Text);
             test.收票金额 = double.Parse(textBox5.Text);
             test.付款金额 = double.Parse(textBox6.Text);
-            test.调整金额 = 0;
+            test.收款调整金额 = 0;
             linq.总包明细.InsertOnSubmit(test);
             linq.SubmitChanges();
             MessageBox.Show("数据添加成功");
@@ -136,7 +136,8 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
-                                 日期=info.日期
+                                 收款调整金额 = info.收款调整金额,
+                                 日期 = info.日期
                              };
 
                 dataGridView1.DataSource = result;

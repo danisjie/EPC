@@ -32,5 +32,15 @@ namespace 总包test.Properties {
                 return ((string)(this["总包testConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-20171025JUZG;Initial Catalog=总包;Integrated Security=True")]
+        public string 总包ConnectionString {
+            get {
+                return ((string)(this["总包ConnectionString"]));
+            }
+        }
     }
 }

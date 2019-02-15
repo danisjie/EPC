@@ -39,13 +39,15 @@ namespace 总包test
                              where id == info.项目
                              select new
                              {
+                                 
                                  项目 = info.项目,
                                  开票金额 = info.开票金额,
-                                 收款金额 = info.收款金额,
+                                 收款金额 = info.收款金额, 
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
+                                 收款调整金额 = info.收款调整金额,
                                  日期 = info.日期,
-                                 编号 = info.编号
+                                 编号=info.编号
                              };
 
                 foreach (var item in result)
@@ -76,6 +78,7 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
+                                 收款调整金额=info.收款调整金额,
                                  日期 = info.日期
                              };
 
@@ -110,16 +113,12 @@ namespace 总包test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox1.Text == "" || textBox4.Text == "")
             {
                 MessageBox.Show("请选择要修改的记录");
                 return;
             }
-            if (textBox4.Text == "")
-            {
-                MessageBox.Show("请输入日期");
-                return;
-            }
+            
             linq = new DataClasses1DataContext(strCon);
 
             var result = from info in linq.总包明细
@@ -138,7 +137,7 @@ namespace 总包test
                     item.付款金额 = double.Parse(textBox6.Text);
                 }
                 linq.SubmitChanges();
-                MessageBox.Show("员工信息修改成功");
+                MessageBox.Show("信息修改成功");
                 BindInfo();
             }
         }

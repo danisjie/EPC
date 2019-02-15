@@ -46,7 +46,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(933, 402);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // contextMenuStrip1
             // 
@@ -54,6 +53,7 @@
             this.删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            this.contextMenuStrip1.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click_1);
             // 
             // 删除ToolStripMenuItem
             // 

@@ -52,7 +52,7 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
-                                 调整金额=info.调整金额,
+                                 收款调整金额=info.收款调整金额,
                                  日期=info.日期
 
                              };
@@ -63,7 +63,7 @@ namespace 总包test
             {
                 
                         var resultid = from info in linq.总包明细
-                                       where info.项目 == textBox1.Text
+                                       where info.项目.Contains(textBox1.Text)
                                        select new
                                        {
                                            项目 = info.项目,
@@ -71,7 +71,7 @@ namespace 总包test
                                            收款金额 = info.收款金额,
                                            收票金额 = info.收票金额,
                                            付款金额 = info.付款金额,
-                                           调整金额 = info.调整金额,
+                                           收款调整金额 = info.收款调整金额,
                                            日期 = info.日期
                                        };
                         dataGridView1.DataSource = resultid;

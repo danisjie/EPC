@@ -88,7 +88,7 @@
             this.数据库.Name = "数据库";
             this.数据库.Size = new System.Drawing.Size(100, 21);
             this.数据库.TabIndex = 5;
-            this.数据库.Text = "总包test";
+            this.数据库.Text = "总包";
             // 
             // 账号
             // 
@@ -96,7 +96,6 @@
             this.账号.Name = "账号";
             this.账号.Size = new System.Drawing.Size(100, 21);
             this.账号.TabIndex = 6;
-            this.账号.Text = "sa";
             // 
             // 密码
             // 
@@ -104,7 +103,6 @@
             this.密码.Name = "密码";
             this.密码.Size = new System.Drawing.Size(100, 21);
             this.密码.TabIndex = 7;
-            this.密码.Text = "wsj910316";
             // 
             // button1
             // 
@@ -118,6 +116,7 @@
             // 
             // Form6
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 537);
@@ -132,6 +131,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form6";
             this.Text = "登录窗口";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

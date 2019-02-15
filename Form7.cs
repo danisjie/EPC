@@ -57,6 +57,7 @@ namespace 总包test
                                  收款金额 = info.收款金额,
                                  收票金额 = info.收票金额,
                                  付款金额 = info.付款金额,
+                                 收款调整金额=info.收款调整金额,
                                  日期 = info.日期
                              };
 
