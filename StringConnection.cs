@@ -14,7 +14,7 @@ namespace 总包test
 
         public override string ToString()
         {
-            string strCon = String.Format("Data Source=PC-20171025JUZG;database={0};uid={1};pwd={2};", Database, Uid, Pwd);
+            string strCon = String.Format("Data Source=MicroWin10-2015;database={0};uid={1};pwd={2};", Database, Uid, Pwd);
             return strCon;
         }
 
